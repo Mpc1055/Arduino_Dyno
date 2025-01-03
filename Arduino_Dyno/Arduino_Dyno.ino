@@ -47,7 +47,7 @@ void loop() {
   was = millis();           // Set was to current time
   LED_State = ~LED_State;   // Invert State of LED
 
-while( (millis() - was) < 1000){
+while( (millis() - was) < 50){
   digitalWrite(LED, LED_State); // Toggle LED on and off based on LED_State
 } 
 
