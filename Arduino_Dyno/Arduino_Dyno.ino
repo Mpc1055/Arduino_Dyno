@@ -10,7 +10,9 @@ to Pin 2
 #define opticalSensor 2
 #define LED 13
 
-int  was        = 0; // Used to store or "now time"
+unsigned long was = 0; // Used to store or "now time"
+unsigned long now = 0;
+
 int  counter    = 0; // Store number of beam breaks
 int  RPS        = 0; // Revolutions Perr Second
 int  LED_State  = 0; // Used to Toggle Led ON and off
@@ -49,8 +51,15 @@ while( (millis() - was) < 1000){
   digitalWrite(LED, LED_State); // Toggle LED on and off based on LED_State
 } 
 
- RPS = counter/2;             // Calculate RPS by dividing toal # of beam breaks by number of slits in wheel
- Serial.println(RPS);         // Print RPS
+ RPS = (counter/2);             // Calculate RPS by dividing toal # of beam breaks by number of slits in wheel
+ now = millis();
+ counter = 0;                 // Reset counter
+
+//  Serial.print("RPS ");
+ Serial.print(RPS);
+//Serial.print(" Time ");
+ Serial.print(" "); 
+ Serial.println(now);
  counter = 0;                 // Reset counter
 
 }
