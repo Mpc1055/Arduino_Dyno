@@ -50,7 +50,6 @@ ISR(TIMER1_OVF_vect){//______ISR for when timer1A interrupts
   rps = (counter/2) *20;
   counter = 0;
   Serial.println(rps);
- 
 }
 void ISR1 (){
   counter +=1; //Increment counter
@@ -89,7 +88,5 @@ void timer1_init(float period){
       Serial.println("Invalid Period Selected");
       Serial.println("Max is 4194 ms");
     }
-
-
 }
 
