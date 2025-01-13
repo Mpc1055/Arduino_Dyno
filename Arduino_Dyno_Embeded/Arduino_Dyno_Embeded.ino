@@ -49,8 +49,6 @@ ISR(TIMER1_OVF_vect){//______ISR for when timer1A interrupts
   TCNT1 = TCNt1_value; 
   rps = (counter/2) *20;
   counter = 0;
-  Serial.print(millis());
-  Serial.print("  ");
   Serial.println(rps);
  
 }
